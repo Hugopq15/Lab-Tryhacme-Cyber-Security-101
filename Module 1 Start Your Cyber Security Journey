@@ -1,0 +1,45 @@
+# Room Offensive Security Intro Lab
+
+## Task 1: Think like a Hacker Offensive Security Basics
+**Scenario:** Offensive Security is about thinking like an attacker to find weaknesses before real hackers do.
+
+In this room, you'll hack your first website in a safe and legal environment to see how ethical hackers operate.  
+
+---
+
+## Task 2: Starting the Lab
+**Scenario:** This room uses a virtual desktop to simulate a real system. Press the "View Site" button below to get started.
+
+A fake banking application called FakeBank will launch. When the lab loads, you'll see the banking application running in your browser.
+
+---
+
+## Task 3: Find Hidden Page
+**Scenario:** Now we will find a weakness in the FakeBank website. 
+
+After clicking the above "View Site" button, we will begin using the terminal. The terminal is used to interact with the device and cybersecurity tools.
+
+One common mistake websites make is leaving hidden pages accessible. We'll use the terminal to run a command that can look for these.
+  
+---
+
+## Task 4: Attack the Admin Page
+**Scenario:** Navigating to the hidden admin panel `/bank-transfer` to deposit money.  
+
+---
+
+## Tools Used
+- TryHackMe platform  
+- Virtual desktop environment  
+- Dirb (directory brute force tool)  
+- Web browser  
+
+## Findings
+- Hidden admin panel discovered.  
+- Vulnerability in FakeBank application.  
+- Ability to manipulate account balance.  
+
+## Mitigation
+- Restrict access to hidden admin pages.  
+- Implement stronger authentication.  
+- Regular vulnerability scanning.  
