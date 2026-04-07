@@ -1,1 +1,52 @@
+Task 1 – Think like a Defender
+Scenario: A security analyst sits at a desk with multiple monitors showing maps, charts, and cybersecurity dashboards.
+Concept: Defensive security is about protecting and securing systems. Analysts focus on detecting and investigating attacks, and responding before damage occurs. Unlike offensive security, defenders do not attack systems — they monitor and protect them.
 
+Task 2 – Detect Suspicious Activity
+Scenario: Joe, an apprentice SOC analyst, is on his first solo shift. His monitoring dashboard has lit up with alerts.
+Steps:
+
+Open the monitoring dashboard.
+
+Review recent alerts.
+
+Identify the suspicious source IP.
+Objective: Learn how SOC analysts distinguish normal activity from suspicious behavior.
+
+Task 3 – Identify the Attack
+Scenario: Joe has spotted suspicious activity. Now he must determine what the attacker is trying to do.
+Steps:
+
+Investigate the attack using the monitoring dashboard.
+
+Review the “URL Discovery Attempts” list.
+
+Analyze the latest entry to classify the attack.
+Objective: Practice analyzing logs to understand the attacker’s intent.
+
+Task 4 – Stop the Attack
+Scenario: Joe knows the attacker’s IP and their activity. The priority now is containment.
+Steps:
+
+Review the security actions already applied.
+
+Block the attacker’s IP (32.122.195.63) by adding it into the “Add Firewall Rule” textbox.
+
+Select BLOCK from the dropdown and press Apply.
+Objective: Practice immediate response by blocking malicious traffic.
+
+Findings
+Suspicious activity was detected from IP 32.122.195.63.
+
+The attacker attempted URL discovery, indicating reconnaissance.
+
+Defensive actions successfully contained the threat by blocking the IP.
+
+Mitigation
+Strengthen firewall rules and intrusion detection systems.
+
+Implement automated blocking for repeated suspicious attempts.
+
+Regularly monitor logs and dashboards to detect anomalies early.
+
+Train SOC analysts to respond quickly to alerts.
