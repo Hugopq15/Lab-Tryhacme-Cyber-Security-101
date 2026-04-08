@@ -1,1 +1,82 @@
+Room 5 Lynux Fundamentals Part 2 
 
+## task 1 Remote access:
+
+Deployed a Linux machine and the TryHackMe AttackBox.
+
+Connected via ssh tryhackme@MACHINE_IP.
+
+Flags and manuals:
+
+Extended command functionality with flags (ls -a, ls -l).
+
+Consulted documentation using --help and man.
+
+Filesystem interaction:
+
+Created files (touch) and directories (mkdir).
+
+Deleted files (rm) and directories (rm -R).
+
+Copied files (cp) and moved/renamed files (mv).
+
+Verified file type with file.
+
+Permissions and users:
+
+Listed permissions with ls -lh.
+
+Analyzed symbolic (rwxrwxrwx) and numeric formats (777, 755, 644).
+
+Switched users with su user2 and su -l user2.
+
+Applied permissions using chmod.
+
+Common root directories:
+
+/etc: system configuration files (e.g., sudoers, passwd, shadow).
+
+/var: variable data such as logs (/var/log).
+
+/root: home directory of the root user.
+
+/tmp: temporary storage, cleared on reboot, writable by all users.
+
+Findings
+SSH enables secure remote command execution.
+
+Flags and manuals expand and document command behavior.
+
+File operations (touch, mkdir, rm, cp, mv) are essential for system administration.
+
+Permissions control access and must be configured with least privilege.
+
+Root directories contain critical information that requires protection and monitoring.
+
+Mitigation / Practical Application
+Always use SSH with secure credentials and encryption.
+
+Regularly consult man and --help to understand command options.
+
+Apply minimal necessary permissions with chmod to reduce security risks.
+
+Monitor /var/log for anomalies and protect sensitive files in /etc.
+
+Restrict /root access to authorized administrators only.
+
+Use /tmp cautiously in pentesting, avoiding insecure or persistent files.
+
+Conclusion
+This lab was theory‑heavy but practical, covering:
+
+Remote connection via SSH.
+
+Advanced command usage with flags and manuals.
+
+Basic file and directory management.
+
+Introduction to permissions and user switching.
+
+Exploration of critical root directories in Linux.
+
+Consistent practice of these concepts is key to building fluency in Linux system administration and strengthening security in production environments.
