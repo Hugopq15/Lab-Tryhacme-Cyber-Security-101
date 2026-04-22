@@ -1,48 +1,61 @@
 # Room 6 Linux Fundamentals Part 3
 
-Task 1 Remote Access
+## Task 1 Remote Access
 
 Deployed a Linux machine and the TryHackMe AttackBox.
 Connected via SSH using ssh tryhackme@MACHINE_IP.
 
-Task 2 Flags and Manuals
+---
+
+## Task 2 Flags and Manuals
 Extended command functionality with flags (ls -a, ls -l).
 Consulted documentation using --help and man.
 
-Task 3 Filesystem Interaction
+---
+
+## Task 3 Filesystem Interaction
 Created files (touch) and directories (mkdir).
 Deleted files (rm) and directories (rm -R).
 Copied files (cp) and moved/renamed files (mv).
 Verified file type with file.
 
-Task 4 Permissions and Users
+---
+
+## Task 4 Permissions and Users
 Listed permissions with ls -lh.
 Analyzed symbolic (rwxrwxrwx) and numeric formats (777, 755, 644).
 Switched users with su user2 and su -l user2.
 Applied permissions using chmod.
 
-Task 5 Common Root Directories
+---
+
+## Task 5 Common Root Directories
 /etc: system configuration files (sudoers, passwd, shadow).
 /var: variable data such as logs (/var/log).
 /root: home directory of the root user.
 /tmp: temporary storage, cleared on reboot, writable by all users.
 
-Task 6 Processes 101
+---
+
+## Task 6 Processes 101
 Viewing Processes: ps, ps aux, top.
 Managing Processes: kill PID with signals (SIGTERM, SIGKILL, SIGSTOP).
 Initialization: PID 0 starts at boot via systemd.
 Systemctl: manage services (start, stop, enable, disable, status).
 Foreground/Background: run with &, suspend with Ctrl+Z, resume with fg.
 
-Task 7 Maintaining Your System: Automation
+---
+
+## Task 7 Maintaining Your System: Automation
 Cron & Crontabs: schedule tasks with 6 values (MIN, HOUR, DOM, MON, DOW, CMD).
 Example: backup every 12 hours:
 Code
 0 */12 * * * cp -R /home/cmnatic/Documents /var/backups/
 Edit crontabs with crontab -e.
 
-Task 8 Maintaining Your System: Package Management
+---
 
+## Task 8 Maintaining Your System: Package Management
 Repositories: official and community repositories managed via apt.
 Adding Repositories:
 Add GPG key with apt-key.
@@ -51,8 +64,9 @@ Update with apt update.
 Install with apt install.
 Removing Packages: apt remove software-name or add-apt-repository --remove.
 
-Task 9 Maintaining Your System: Logs
+---
 
+## Task 9 Maintaining Your System: Logs
 Logs stored in /var/log.
 Examples:
 Apache2 (access, error logs).
@@ -60,6 +74,8 @@ Fail2ban (brute force attempts).
 UFW firewall logs.
 Log Rotation: automatic management to prevent excessive growth.
 Logs provide visibility into system health, performance, and security.
+
+---
 
 Tools Used
 Access & Deployment: SSH, TryHackMe AttackBox (Ubuntu).
