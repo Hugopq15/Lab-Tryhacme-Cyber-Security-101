@@ -1,1 +1,142 @@
 # Room 9 Windows Fundamentals Part 3
+
+## Task 1: Introduction
+
+Scenario: A user logs into a Windows virtual machine to continue exploring the operating system.
+Concept: This room builds on Windows Fundamentals 1 and 2, focusing on security features in Windows. The goal is to understand how updates, built-in protections, and tools safeguard devices and data.
+
+--- 
+
+## Task 2: Windows Updates
+
+Scenario: The user opens Windows Update settings to check for available updates.
+Steps:
+- Open Settings → Update & Security → Windows Update.
+- Review update status (managed settings, pending updates, restart requirements).
+- Note that updates are released monthly on Patch Tuesday, but urgent patches may be pushed earlier.
+- Objective: Learn how Windows Update keeps systems secure and why updates cannot be indefinitely postponed.
+
+---
+
+## Task 3: Windows Security
+
+Scenario: The user navigates to Windows Security to review protection areas.
+Steps:
+- Open Settings → Windows Security.
+- Review protection areas:
+- Virus & threat protection
+- Firewall & network protection
+- App & browser control
+- Device security
+Interpret status icons:
+- Green = protected
+- Yellow = recommendation
+- Red = immediate action required
+- Objective: Understand how Windows Security centralizes tools for protecting devices and data.
+
+---
+
+## Task 4: Virus & Threat Protection
+
+Scenario: The user opens the Virus & threat protection section.
+Steps:
+- Review Current threats: Quick scan, Full scan, Custom scan.
+- Check Threat history: last scan, quarantined threats, allowed threats.
+- Explore Settings: real-time protection, cloud-delivered protection, sample submission, controlled folder access, exclusions, notifications.
+- Update definitions manually.
+- Enable ransomware protection.
+- Objective: Learn how Windows Defender Antivirus detects, isolates, and prevents malware.
+
+---
+
+## Task 5: Firewall & Network Protection
+
+Scenario: The user explores firewall profiles.
+Steps:
+- Review profiles:
+- Domain → authenticated networks.
+- Private → home/private networks.
+- Public → public Wi-Fi/hotspots.
+- Configure options: turn firewall on/off, block incoming connections.
+- Allow apps through firewall.
+- Explore advanced settings.
+- Objective: Understand how firewalls control traffic and protect different network environments.
+
+---
+
+## Task 6: App & Browser Control
+
+Scenario: The user reviews Microsoft Defender SmartScreen.
+Steps:
+- Configure SmartScreen for apps, files, and downloads (Warn, Block, Off).
+- Review Exploit protection against advanced attacks.
+- Objective: Learn how SmartScreen prevents phishing, malware, and malicious downloads.
+
+---
+
+## Task 7: Device Security
+
+Scenario: The user explores Device security settings.
+Steps:
+- Review Core isolation and Memory Integrity.
+- Check TPM (Trusted Platform Module) details.
+- Objective: Understand how hardware-level security features strengthen system defenses.
+
+---
+
+## Task 8: BitLocker
+
+Scenario: The user explores BitLocker Drive Encryption.
+Steps:
+- Learn what BitLocker is: built-in encryption to protect data.
+- Understand TPM integration: BitLocker works best with TPM v1.2+.
+- Note: BitLocker is not available in the attached VM.
+- Objective: Understand how BitLocker and TPM provide hardware-based encryption.
+
+---
+
+## Task 9: Volume Shadow Copy Service (VSS)
+
+Scenario: The user reviews Volume Shadow Copy Service.
+Steps:
+- Enable System Protection.
+- Create restore points, restore system, configure settings, delete restore points.
+- Recognize risk: malware may delete shadow copies to prevent recovery.
+- Objective: Learn how shadow copies support recovery and why offline backups are critical.
+
+---
+
+## Tools Used
+
+- Windows Update
+- Windows Security dashboard
+- Windows Defender Antivirus
+- Windows Defender Firewall
+- Microsoft Defender SmartScreen
+- TPM & BitLocker
+- Volume Shadow Copy Service
+
+## Findings
+
+- Windows Defender offers multiple scan options and maintains threat history.
+- Firewall profiles protect different network contexts.
+- SmartScreen and exploit protection mitigate phishing and malware risks.
+- TPM and BitLocker add hardware-level encryption.
+- VSS enables restore points but can be targeted by malware.
+
+## Mitigation
+
+- Keep real-time protection and controlled folder access enabled.
+- Regularly update antivirus definitions and apply Windows Updates.
+- Maintain firewall enabled across all profiles.
+- Avoid disabling SmartScreen or exploit protection.
+- Ensure TPM and BitLocker are active on supported devices.
+- Maintain offline/off-site backups.
+
+
+## Conclusion
+
+- Scenario: The user completes the Windows Fundamentals 3 room.
+- Concept: This room covered built-in Windows security tools: updates, antivirus, firewall, SmartScreen, TPM, BitLocker, and VSS.
+- Objective: Reinforce the importance of enabling and maintaining these features for system resilience.
+
