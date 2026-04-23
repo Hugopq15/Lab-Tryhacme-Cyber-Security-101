@@ -123,7 +123,7 @@ THM Inc. GPOs:
 - Kerberos is the secure default authentication; NetNTLM remains for legacy.
 - Trees and forests scale AD across organizations; trusts enable cross-domain access.
 
-## Mitigation
+## MMitigation / Best Practices
 
 - Regularly review and update OUs and groups to match organizational structure.
 - Apply GPOs to enforce strong password policies and session security.
