@@ -42,19 +42,21 @@
 ---
 
 ## Tools Used
+
 - Protocols and access: SSH (Secure Shell), TryHackMe AttackBox (Ubuntu)
 - Core commands: ls, cd, man, touch, mkdir, rm, cp, mv, file, chmod, su
 - Root directories: /etc, /var, /root, /tmp
 
-
 ## Findings
+
 - SSH enables secure remote command execution.
 - Flags and manuals expand and document command behavior.
 - File operations (touch, mkdir, rm, cp, mv) are essential for system administration.
 - Permissions control access and must be configured with least privilege.
 - Root directories contain critical information that requires protection and monitoring.
 
-## Mitigation / Practical Application
+## Mitigation / Best Practices
+
 - Always use SSH with secure credentials and encryption.
 - Regularly consult man and --help to understand command options.
 - Apply minimal necessary permissions with chmod to reduce security risks.
@@ -63,6 +65,7 @@
 - Use /tmp cautiously in pentesting, avoiding insecure or persistent files.
 
 ## Conclusion
+
 - This lab was theory‑heavy but practical, covering:
 - Remote connection via SSH.
 - Advanced command usage with flags and manuals.
