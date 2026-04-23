@@ -1,1 +1,97 @@
 # Room 11 Windows Command Line
+
+## Task 1 – Introduction and Environment
+
+- Reconoció que las interfaces gráficas (GUI) son más intuitivas, pero las interfaces de línea de comandos (CLI) ofrecen mayor velocidad y eficiencia una vez dominadas.
+- Identificó ventajas clave del CLI: menor uso de recursos, facilidad de automatización mediante scripts y mejor gestión remota a través de SSH.
+- Objetivo del room: aprender a usar cmd.exe, el intérprete por defecto de Windows, para obtener información del sistema, gestionar archivos y procesos, y solucionar configuraciones de red.
+- Prerrequisito: completar el módulo de Windows and AD Fundamentals.
+- Se utilizó el AttackBox para iniciar la máquina y establecer conexión SSH con credenciales proporcionadas.
+
+---
+
+## Task 2 – Basic System Information
+
+- set: Muestra variables de entorno y rutas donde Windows ejecuta comandos.
+- ver: Identifica la versión del sistema operativo.
+- systeminfo: Proporciona información detallada del sistema (nombre del host, versión de OS, fabricante, procesador, memoria, etc.).
+- driverquery | more: Lista los drivers instalados y permite paginar la salida con el operador | more.
+- help: Muestra información de ayuda sobre un comando específico.
+- cls: Limpia la pantalla del Command Prompt.
+
+---
+
+## Task 3 – Network Troubleshooting
+
+Network Configuration
+- ipconfig: Muestra la configuración básica de red (IP, máscara de subred, gateway).
+- ipconfig /all: Proporciona información detallada como servidores DNS, estado de DHCP, dirección física (MAC) y tiempos de concesión de IP.
+- Connectivity Testing
+- ping target_name: Envía paquetes ICMP para verificar conectividad con un servidor.
+- tracert target_name: Traza la ruta de red hasta el destino mostrando los routers intermedios.
+Name Resolution
+- nslookup domain: Consulta registros DNS para obtener la dirección IP de un dominio.
+Active Connections
+- netstat: Muestra conexiones activas y puertos en escucha.
+- netstat -abon: Combina opciones para mostrar todas las conexiones, programas asociados, PID y direcciones numéricas.
+
+---
+
+## Task 4 – File and Disk Management
+
+Working With Directories
+- cd: Muestra el directorio actual. Con cd .. se sube un nivel en la jerarquía.
+- dir: Lista archivos y carpetas en el directorio actual.
+- dir /a → incluye archivos ocultos y de sistema.
+- dir /s → muestra archivos en el directorio y subdirectorios.
+- tree: Representa gráficamente la estructura de directorios.
+- mkdir: Crea un nuevo directorio.
+- rmdir: Elimina un directorio vacío.
+- Working With Files
+- type file.txt: Muestra el contenido de un archivo de texto.
+- more file.txt: Visualiza archivos largos página por página.
+- copy origen destino: Copia archivos de un lugar a otro.
+- move origen destino: Mueve archivos a otra ubicación.
+- del / erase archivo: Elimina archivos.
+- wildcards (\)*: Permiten operar sobre múltiples archivos (ejemplo: copy *.md C:\Markdown).
+
+---
+
+## Task 5 – Task and Process Management
+
+- tasklist: Lista todos los procesos en ejecución con nombre, PID y uso de memoria.
+- tasklist /FI "imagename eq nombre.exe": Filtra procesos por nombre de imagen (ejemplo: sshd.exe).
+- taskkill /PID número: Termina un proceso específico usando su PID.
+
+---
+
+## Tools Used
+
+- Windows Command Prompt (cmd.exe): Para gestión de archivos, procesos y red.
+- AttackBox: Entorno de práctica para ejecutar comandos en un sistema Windows.
+
+## Findings
+
+- Gestión flexible: El CLI permite crear, mover y eliminar archivos y carpetas con precisión.
+- Control de procesos: tasklist y taskkill ofrecen un control granular sobre procesos activos.
+- Auditoría de red y sistema: Comandos como netstat, ipconfig y systeminfo permiten diagnósticos completos.
+- Automatización: El uso de comodines y scripts facilita operaciones masivas en archivos.
+
+## Mitigation / Best Practices
+
+- Prevención de errores: Confirmar directorios antes de usar del o erase para evitar pérdida accidental de datos.
+- Monitoreo constante: Revisar procesos con tasklist para detectar actividad sospechosa.
+- Uso de comodines con precaución: Evitar operaciones destructivas con * sin verificar primero.
+- Documentación: Registrar comandos críticos y mantener scripts organizados para futuras tareas administrativas.
+- Escalabilidad: Usar /? y more para aprender nuevos comandos y manejar salidas largas de forma segura.
+
+## Conclusion
+
+- Se cubrieron los comandos más prácticos para administrar un sistema Windows desde la línea de comandos.
+- Comandos adicionales útiles:
+- chkdsk: Verifica errores en discos y sectores defectuosos.
+- driverquery: Lista los drivers instalados.
+- sfc /scannow: Escanea y repara archivos de sistema corruptos.
+- Recordatorio: la opción /? está disponible en la mayoría de los comandos para mostrar la página de ayuda.
+- El comando more se puede usar tanto para visualizar archivos largos como para paginar salidas extensas de otros comandos.
+- Próximo paso: avanzar al room de Windows PowerShell para aprender comandos más avanzados.
