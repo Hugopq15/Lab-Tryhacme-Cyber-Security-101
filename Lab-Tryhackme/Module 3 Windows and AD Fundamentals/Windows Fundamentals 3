@@ -124,7 +124,7 @@ Steps:
 - TPM and BitLocker add hardware-level encryption.
 - VSS enables restore points but can be targeted by malware.
 
-## Mitigation
+## Mitigation / Best Practices
 
 - Keep real-time protection and controlled folder access enabled.
 - Regularly update antivirus definitions and apply Windows Updates.
