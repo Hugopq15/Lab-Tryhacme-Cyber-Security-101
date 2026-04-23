@@ -8,12 +8,14 @@
 ---
 
 ## Task 2 Flags and Manuals
+
 - Extended command functionality with flags (ls -a, ls -l).
 - Consulted documentation using --help and man.
 
 ---
 
 ## Task 3 Filesystem Interaction
+
 - Created files (touch) and directories (mkdir).
 - Deleted files (rm) and directories (rm -R).
 - Copied files (cp) and moved/renamed files (mv).
@@ -22,6 +24,7 @@
 ---
 
 ## Task 4 Permissions and Users
+
 - Listed permissions with ls -lh.
 - Analyzed symbolic (rwxrwxrwx) and numeric formats (777, 755, 644).
 - Switched users with su user2 and su -l user2.
@@ -30,6 +33,7 @@
 ---
 
 ## Task 5 Common Root Directories
+
 - /etc: system configuration files (sudoers, passwd, shadow).
 - /var: variable data such as logs (/var/log).
 - /root: home directory of the root user.
@@ -38,6 +42,7 @@
 ---
 
 ## Task 6 Processes 101
+
 - Viewing Processes: ps, ps aux, top.
 - Managing Processes: kill PID with signals (SIGTERM, SIGKILL, SIGSTOP).
 - Initialization: PID 0 starts at boot via systemd.
@@ -47,6 +52,7 @@
 ---
 
 ## Task 7 Maintaining Your System: Automation
+
 - Cron & Crontabs: schedule tasks with 6 values (MIN, HOUR, DOM, MON, DOW, CMD).
 - Example: backup every 12 hours:
 Code
@@ -56,6 +62,7 @@ Edit crontabs with crontab -e.
 ---
 
 ## Task 8 Maintaining Your System: Package Management
+
 - Repositories: official and community repositories managed via apt.
 - Adding Repositories:
 - Add GPG key with apt-key.
@@ -67,6 +74,7 @@ Edit crontabs with crontab -e.
 ---
 
 ## Task 9 Maintaining Your System: Logs
+
 - Logs stored in /var/log.
 Examples:
 Apache2 (access, error logs).
@@ -78,6 +86,7 @@ UFW firewall logs.
 ---
 
 ## Tools Used
+
 - Access & Deployment: SSH, TryHackMe AttackBox (Ubuntu).
 - Core Commands: ls, cd, man, touch, mkdir, rm, cp, mv, file, chmod, su.
 - Process Management: ps, top, kill, systemctl.
@@ -88,6 +97,7 @@ UFW firewall logs.
 - Utilities: wget, scp.
 
 ## Findings
+
 - SSH enables secure remote command execution.
 - Flags and manuals expand and document command behavior.
 - File operations are essential for system administration.
@@ -97,7 +107,8 @@ UFW firewall logs.
 - Package management ensures secure installation and updates.
 - Logs provide critical visibility into system and application behavior.
 
-## Mitigation / Practical Application
+## Mitigation / Best Practices
+
 - Always use SSH with secure credentials and encryption.
 - Apply minimal necessary permissions with chmod.
 - Monitor /var/log for anomalies and protect sensitive files in /etc.
@@ -108,6 +119,7 @@ UFW firewall logs.
 - Restrict /root access to authorized administrators only.
 
 ## Conclusion
+
 - This Linux Fundamentals module covered:
 - Remote connection via SSH.
 - Advanced command usage with flags and manuals.
