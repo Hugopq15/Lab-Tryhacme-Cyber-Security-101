@@ -1,1 +1,147 @@
 # Room 12 Windows PowerShell
+
+## Task 1 – Introduction
+
+- PowerShell is the second command-line utility built for Windows, after cmd.exe.
+- It combines a command-line shell, a scripting language, and a configuration management framework.
+Learning objectives:
+- Understand what PowerShell is and its capabilities.
+- Learnt the basic structure of PowerShell’s language.
+- Run basic PowerShell commands.
+- Recognize PowerShell’s applications in cybersecurity.
+- Prerequisites: completion of Windows and AD Fundamentals and Windows Command Line modules.
+
+---
+
+## Task 2 – What Is PowerShell
+
+Definition
+A cross-platform automation solution built on the .NET Framework.
+Object-oriented, enabling manipulation of complex data and system components.
+Available on Windows, macOS, and Linux.
+Brief History
+- Developed in the early 2000s to overcome cmd.exe and batch limitations.
+- Designed by Jeffrey Snover with an object-oriented approach.
+- Released in 2006, later expanded into PowerShell Core (2016, open-source, cross-platform).
+Power of PowerShell
+- Objects encapsulate properties (data) and methods (actions).
+- Cmdlets return objects instead of plain text, allowing advanced manipulation.
+
+---
+
+## Task 3 – PowerShell Basics
+
+Connecting to the Environment
+Accessed via SSH with provided credentials (user: captain, password: JollyR0ger#).
+PowerShell can be launched from Start Menu, Run dialog, File Explorer, Task Manager, or cmd.exe.
+Syntax: Verb-Noun
+Cmdlets follow a Verb-Noun convention.
+- Get-Content: retrieves file content.
+- Set-Location: changes the current directory.
+Essential Cmdlets
+- Get-Command: lists all available cmdlets, functions, aliases, and scripts.
+- Get-Help: provides detailed information, parameters, and examples.
+- Get-Alias: lists aliases (e.g., dir → Get-ChildItem).
+Extending Functionality
+- Find-Module: searches online repositories.
+- Install-Module: installs new modules to expand capabilities.
+
+---
+
+## Task 4 – Navigating the File System and Working with Files
+
+- Get-ChildItem: lists files and directories.
+- Set-Location: changes directory.
+- New-Item: creates files or directories.
+- Remove-Item: deletes files or directories.
+- Copy-Item: copies files or directories.
+- Move-Item: moves files or directories.
+- Get-Content: displays file contents.
+
+---
+
+## Task 5 – Piping, Filtering, and Sorting Data 
+
+Piping
+- | passes objects between cmdlets.
+Example:
+powershell
+- Get-ChildItem | Sort-Object Length
+Filtering
+- Where-Object: filters objects by conditions.
+powershell
+- Get-ChildItem | Where-Object {$_.Extension -eq ".txt"}
+Comparison Operators
+- -eq: equal to
+- -ne: not equal
+- -gt: greater than
+- -ge: greater or equal
+- -lt: less than
+- -le: less or equal
+- -like: matches a pattern
+Refinement
+- Select-Object: selects specific properties or limits results.
+- Select-String: searches text patterns in files (supports regex).
+
+---
+
+## Task 6 – System and Network Information
+
+- Get-ComputerInfo: retrieves full system details (OS, hardware, BIOS).
+- Get-LocalUser: lists local user accounts.
+- Get-NetIPConfiguration: shows network interface details.
+- Get-NetIPAddress: lists all configured IP addresses.
+
+---
+
+## Task 7 – Real-Time System Analysis
+
+- Get-Process: lists running processes with CPU/memory usage.
+- Get-Service: shows service status (running, stopped, paused).
+- Get-NetTCPConnection: displays active TCP connections.
+- Get-FileHash: generates file hashes for integrity checks.
+- Alternate Data Streams (ADS): reveals hidden NTFS streams attached to files.
+
+---
+
+## Task 8 – Scripting
+
+- Scripting: writing and executing command sequences in text files to automate tasks.
+- Benefits: saves time, reduces errors, handles complex tasks.
+- Cybersecurity applications:
+- Blue Team: log analysis, anomaly detection, IOC extraction, malware reverse engineering.
+- Red Team: system enumeration, remote execution, obfuscated scripts for defense testing.
+- Admins: automate integrity checks, enforce policies, monitor health, respond to incidents.
+- Invoke-Command: executes commands/scripts on remote systems.
+- Example: Invoke-Command -ScriptBlock { Get-Process } -ComputerName TargetPC
+
+---
+
+## Tools Used
+
+- Windows PowerShell: advanced shell for administration and automation.
+- AttackBox: lab environment for practicing PowerShell commands.
+
+## Findings
+
+- Object-oriented: enables structured automation.
+- Versatile: works across operating systems.
+- Extensible: supports modules for added functionality.
+- Efficient: piping and filtering streamline data handling.
+- Security-focused: cmdlets support monitoring, incident response, and threat hunting.
+
+## Mitigation / Best Practices
+
+- Use Get-Help: always check documentation before running unfamiliar cmdlets.
+- Test scripts safely: validate in controlled environments before production.
+- Apply precise filters: avoid unnecessary data processing.
+- Document scripts: maintain for reuse and audits.
+- Monitor actively: use cmdlets to detect anomalies in processes, services, and connections.
+- Ensure compatibility: distinguish between classic PowerShell and PowerShell Core.
+
+## Conclusion
+
+- PowerShell equips professionals with advanced tools for automation, monitoring, and security.
+- Its object-oriented design, extensibility, and cross-platform support make it invaluable.
+- Key cmdlets like Get-Process, Get-Service, Get-NetTCPConnection, and Invoke-Command enable real-time analysis and remote management.
+- Next step: continue with the Linux Command Line room to expand cross-platform command-line skills.
