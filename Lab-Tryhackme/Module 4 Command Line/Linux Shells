@@ -49,7 +49,7 @@ Z Shell (Zsh)
 - Features: advanced tab completion, auto spell correction, extensive customization (e.g., oh-my-zsh).
 Comparison Table
 Feature	            |     Bash          |	      Fish          |	           Zsh                  |
-Scripting           |	Widely compatible |	Limited	            | combines Bash + extras           |
+Scripting           |	Widely compatible |	Limited	            | combines Bash + extras          |
 Tab completion      |	Basic             |	Advanced suggestions|	Highly extensible via plugins   |
 Customization       |	Basic             |	Good customization  |	Advanced frameworks             |
 User friendliness   |	Less user-friendly|	Most user-friendly  |	User-friendly with customization|
