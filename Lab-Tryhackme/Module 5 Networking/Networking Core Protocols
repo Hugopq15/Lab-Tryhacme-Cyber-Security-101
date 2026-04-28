@@ -1,1 +1,142 @@
 # Room 16 Networking Core Protocols
+
+## Task 1 Introduction
+
+- This room explores how devices dynamically configure network settings, how packets traverse multiple networks, and how multiple home devices share a single ISP-provided IP.
+- It is the second room in the networking series:
+- Networking Concepts
+- Networking Essentials (this room)
+- Networking Core Protocols
+- Networking Secure Protocols
+- Prerequisites: OSI model, TCP/IP model, Ethernet, IP, TCP.
+- Objectives: DHCP, ARP, NAT, ICMP, Ping, Traceroute.
+
+---
+
+## Task 2 DHCP: Give Me My Network Settings
+- Scenario: Connecting to a coffee shop WiFi, your laptop configures itself automatically.
+- Required configurations: IP address + subnet mask, router (gateway), DNS server.
+- Manual configuration is common for servers, but DHCP automates this for mobile devices.
+- DHCP basics: Application-level protocol, uses UDP (server port 67, client port 68).
+DORA process:
+- Discover: Client broadcasts DHCPDISCOVER.
+- Offer: Server replies with DHCPOFFER.
+- Request: Client sends DHCPREQUEST.
+- Acknowledge: Server confirms with DHCPACK.
+- Packet capture example:
+Code
+0.0.0.0 → 255.255.255.255 DHCP Discover
+192.168.66.1 → 192.168.66.133 DHCP Offer
+0.0.0.0 → 255.255.255.255 DHCP Request
+192.168.66.1 → 192.168.66.133 DHCP ACK
+Result: Device receives leased IP, gateway, DNS server.
+
+---
+
+## Task 3 ARP: Bridging Layer 3 to Layer 2
+
+- IP packets are encapsulated in Ethernet/WiFi frames. To send a frame, the sender must know the MAC address of the target.
+- MAC basics: 48-bit number, shown in hexadecimal (e.g., 7C:DF:A1:D3:8C:5C).
+- Ethernet frame header includes: Destination MAC, Source MAC, Type (IPv4).
+- ARP (Address Resolution Protocol): Used to discover MAC addresses associated with IPs.
+Example: Host 192.168.66.89 asks “Who has 192.168.66.1?” → broadcast. Target replies with its MAC address.
+tcpdump output example:
+- Code
+Request who-has 192.168.66.1 tell 192.168.66.89
+Reply 192.168.66.1 is-at 44:df:65:d8:fe:6c
+ARP packets are encapsulated directly in Ethernet frames, not IP/UDP.
+Debate: Layer 2 vs Layer 3 classification.
+- Takeaway: ARP translates IP (Layer 3) into MAC (Layer 2).
+
+---
+
+## Task 4 ICMP: Troubleshooting Networks
+
+Purpose: Diagnostics and error reporting.
+Commands:
+- Ping: ICMP Echo Request (Type 8) → Echo Reply (Type 0). Measures RTT, packet loss.
+- Traceroute/Tracert: Uses TTL field; routers decrement TTL, send ICMP Time Exceeded (Type 11).
+Ping Example
+Code
+ping 192.168.11.1 -c 4
+64 bytes from 192.168.11.1: icmp_seq=1 ttl=63 time=11.2 ms
+...
+-4 packets transmitted, 4 received, 0% packet loss
+rtt min/avg/max/mdev = 3.805/10.596/23.366/7.956 ms
+Shows connectivity, RTT statistics, and packet loss.
+Traceroute Example
+Code
+traceroute example.com
+1  _gateway (192.168.66.1)
+2  192.168.11.1
+...
+16  93.184.215.14 (example.com)
+Reveals routers along the path.
+Some routers don’t respond (* * *).
+Routes may change dynamically.
+
+---
+
+## Task 5 Routing
+
+- Routers must decide the best path among multiple possible routes.
+Internet = millions of routers, billions of devices.
+Protocols:
+- OSPF: Link-state, builds full topology map.
+- EIGRP: Cisco proprietary, hybrid metrics.
+- BGP: Core Internet protocol, used between ISPs.
+- RIP: Simple, hop-count based, for small networks.
+
+---
+
+## Task 6 NAT
+
+- IPv4 exhaustion problem solved by NAT.
+- Allows multiple private IPs to share one public IP.
+- Router maintains translation table mapping internal IP+port → external IP+port.
+Example translation:
+- Laptop: 192.168.0.129:15401.
+- Router translates to 212.3.4.5:19273.
+- Web server sees connection from public IP.
+- Key point: NAT is seamless; devices inside don’t notice translation.
+
+---
+
+## Task 7 Closing Notes
+
+- Covered essential protocols: DHCP, ARP, ICMP, Routing, NAT.
+- These acronyms may be invisible to users but are the foundation of the Internet.
+- Understanding them is crucial for troubleshooting, securing, and managing networks.
+
+---
+
+## Tools Used
+
+- Protocols: DHCP, ARP, NAT, ICMP, OSPF, EIGRP, BGP, RIP.
+- Commands: ping, traceroute/tracert, tcpdump, tshark.
+- Devices: Routers, switches, servers.
+- Standards: Ethernet (802.3), WiFi (802.11).
+
+## Findings
+
+- DHCP automates configuration, preventing conflicts.
+- ARP enables IP-to-MAC resolution, critical for Layer 2 communication.
+- ICMP provides visibility into connectivity and routing paths.
+- Routing protocols ensure scalability and efficiency across the Internet.
+- NAT extends IPv4 usability, enabling private networks to connect globally.
+
+## Mitigation / Best Practices
+
+- Use DHCP for mobile devices; static IPs for servers.
+- Monitor ARP traffic to detect spoofing attacks.
+- Restrict ICMP if necessary, but allow controlled diagnostics.
+- Secure routing protocols to prevent hijacking or misconfiguration.
+- Apply NAT carefully, with proper firewall rules.
+- Transition to IPv6 where possible to avoid long-term IPv4 limitations.
+
+## Conclusion
+
+- Networking Essentials builds on Networking Concepts by introducing practical protocols.
+- Learned how DHCP, ARP, ICMP, Routing, and NAT work together to enable modern networking.
+- These protocols form the invisible backbone of everyday Internet use.
+- Mastery of these fundamentals is essential for advancing to Networking Core Protocols and Networking Secure Protocols.
