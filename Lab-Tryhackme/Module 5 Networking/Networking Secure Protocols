@@ -2,125 +2,122 @@
 
 ## Task 1 Introduction
 
-- Los protocolos básicos como HTTP y SMTP no garantizan confidencialidad, integridad ni autenticidad.
-- TLS añade seguridad a protocolos existentes (HTTPS, POP3S, SMTPS, IMAPS).
-- SSH reemplaza TELNET para acceso remoto seguro.
-- VPN permite crear redes privadas sobre Internet.
-- Objetivos: comprender SSL/TLS, asegurar protocolos en texto plano, usar SSH y VPN.
+- Basic protocols such as HTTP and SMTP do not guarantee confidentiality, integrity, or authenticity.
+- TLS adds security to existing protocols (HTTPS, POP3S, SMTPS, IMAPS).
+- SSH replaces TELNET for secure remote access.
+- VPN allows the creation of private networks over the Internet.
+- Objectives: understand SSL/TLS, secure plaintext protocols, use SSH and VPN.
 
 ---
 
 ## Task 2 TLS
 
-- SSL (1995) evolucionó a TLS (1999). TLS 1.3 (2018) es la versión actual.
-- TLS opera en la capa de transporte, garantizando confidencialidad e integridad.
-- Protocolos asegurados: HTTPS, DoT, MQTTS, SIPS.
-- Certificados digitales emitidos por CA; alternativa gratuita: Let’s Encrypt.
-- Los certificados autofirmados no garantizan autenticidad.
+- SSL (1995) evolved into TLS (1999). TLS 1.3 (2018) is the current version.
+- TLS operates at the transport layer, ensuring confidentiality and integrity.
+- Secured protocols: HTTPS, DoT, MQTTS, SIPS.
+- Digital certificates issued by Certificate Authorities (CA); free alternative: Let’s Encrypt.
+- Self-signed certificates do not guarantee authenticity.
 
 ---
 
 ## Task 3 HTTPS
 
-- HTTP usa puerto 80 y transmite en texto plano.
-- HTTPS = HTTP sobre TLS (puerto 443).
-- Flujo: TCP handshake → sesión TLS → comunicación HTTP cifrada.
-- En Wireshark, los datos aparecen como Application Data.
-- Con clave privada, se puede descifrar tráfico.
-- TLS ofreció seguridad a HTTP sin cambios en capas inferiores o superiores.
+- HTTP uses port 80 and transmits in plaintext.
+- HTTPS = HTTP over TLS (port 443).
+- Flow: TCP handshake → TLS session → encrypted HTTP communication.
+- In Wireshark, data appears as Application Data.
+- With the private key, traffic can be decrypted.
+- TLS provided security to HTTP without changes to lower or upper layers.
 
 ---
 
 ## Task 4 SMTPS, POP3S, IMAPS
 
-- Igual que HTTPS, los protocolos de correo se aseguran con TLS.
-- Puertos seguros: SMTP (465/587), POP3 (995), IMAP (993).
-- TLS puede añadirse a muchos otros protocolos con beneficios similares.
-Protocol	Default Port Number
-HTTP	     80
-SMTP	     25
-POP3	     110
-IMAP	     143
-The secure versions, i.e., over TLS, use the following TCP port numbers by default:
-
-Protocol	Default Port Number
-HTTPS	    443
-SMTPS	    465 and 587
-POP3S	    995
-IMAPS	    993
+- Just like HTTPS, email protocols are secured with TLS.
+- Secure ports: SMTP (465/587), POP3 (995), IMAP (993).
+- TLS can be added to many other protocols with similar benefits.
+Default insecure ports:
+- HTTP: 80
+- SMTP: 25
+- POP3: 110
+- IMAP: 143
+Default secure ports (TLS):
+- HTTPS: 443
+- SMTPS: 465 and 587
+- POP3S: 995
+- IMAPS: 993
 
 ---
 
-T## ask 5 SSH
+## Task 5 SSH
 
-- TELNET (puerto 23) enviaba credenciales en texto plano.
-- SSH creado en 1995, SSH-2 en 1996, OpenSSH en 1999.
-- Beneficios: autenticación segura, confidencialidad, integridad, túneles, X11 Forwarding.
-- Uso básico: ssh usuario@hostname (puerto 22).
+- TELNET (port 23) transmitted credentials in plaintext.
+- SSH was created in 1995, SSH-2 in 1996, OpenSSH in 1999.
+- Benefits: secure authentication, confidentiality, integrity, tunneling, X11 forwarding.
+- Basic usage: ssh user@hostname (port 22).
 
 ---
 
-## Task 6 SFTP y FTPS
+Task 6 SFTP and FTPS
 
-- SFTP: parte de SSH, puerto 22.
-- FTPS: FTP sobre TLS, puerto 990.
-- Diferencia: SFTP depende de SSH, FTPS de TLS.
-- SFTP ofrece simplicidad y seguridad; FTPS requiere certificados y configuración más compleja.
+- SFTP: part of SSH, port 22.
+- FTPS: FTP over TLS, port 990.
+- Difference: SFTP relies on SSH, FTPS on TLS.
+- SFTP offers simplicity and security; FTPS requires certificates and more complex configuration.
 
 ---
 
 ## Task 7 VPN
 
-- VPN crea una red privada sobre Internet.
-- Permite conectar sucursales o usuarios remotos.
-- Características: cifrado, ocultar IP pública, sortear restricciones.
-- Riesgos: fugas de DNS/IP, legalidad en algunos países.
+- VPN creates a private network over the Internet.
+- Allows connecting branches or remote users.
+- Features: encryption, hiding public IP, bypassing restrictions.
+- Risks: DNS/IP leaks, legality issues in some countries.
 
 ---
 
 ## Task 8 Closing Notes
 
-- Tres enfoques principales para asegurar tráfico de red:
-- TLS: asegura protocolos existentes.
-- SSH: acceso remoto seguro y túneles.
-- VPN: redes privadas sobre Internet.
+Three main approaches to secure network traffic:
+- TLS: secures existing protocols.
+- SSH: secure remote access and tunneling.
+- VPN: private networks over the Internet.
 
 ---
 
 ## Challenge
 
-- Configurar navegador para registrar claves TLS (--ssl-key-log-file=~/ssl-key.log).
-- Captura de tráfico (randy-chromium.pcapng).
-- En Wireshark, cargar archivo de claves para descifrar tráfico TLS y observar credenciales.
+- Configure browser to log TLS keys (--ssl-key-log-file=~/ssl-key.log).
+- Traffic capture (randy-chromium.pcapng).
+- In Wireshark, load the key file to decrypt TLS traffic and view credentials.
 
 ## Tools Used
 
-- Protocolos: TLS, SSL, HTTPS, SMTPS, POP3S, IMAPS, SSH, SFTP, FTPS, VPN.
-- Comandos: ssh, sftp, Wireshark.
-- Infraestructura: certificados digitales, OpenSSH, servidores VPN.
+- Protocols: TLS, SSL, HTTPS, SMTPS, POP3S, IMAPS, SSH, SFTP, FTPS, VPN.
+- Commands: ssh, sftp, Wireshark.
+- Infrastructure: digital certificates, OpenSSH, VPN servers.
 
 ## Findings
 
-- TLS asegura protocolos de aplicación sin alterar TCP/IP.
-- HTTPS protege la web y protocolos de correo.
-- SSH reemplazó TELNET, ofreciendo cifrado y autenticación robusta.
-- SFTP y FTPS permiten transferencias seguras de archivos.
-- VPNs proporcionan privacidad y acceso remoto seguro.
+- TLS secures application protocols without altering TCP/IP.
+- HTTPS protects the web and email protocols.
+- SSH replaced TELNET, offering encryption and strong authentication.
+- SFTP and FTPS enable secure file transfers.
+- VPNs provide privacy and secure remote access.
 
 ## Mitigation / Best Practices
 
-- Usar TLS 1.3 en todos los servicios críticos.
-- Configurar HTTPS en todos los servicios web.
-- Obtener certificados de CA reconocidas.
-- Configurar SSH con llaves públicas y deshabilitar TELNET.
-- Preferir SFTP sobre FTPS por simplicidad y seguridad.
-- Configurar VPNs para evitar fugas de DNS/IP y cumplir con regulaciones locales.
+- Use TLS 1.3 for all critical services.
+- Configure HTTPS for all web services.
+- Obtain certificates from recognized CAs.
+- Configure SSH with public keys and disable TELNET.
+- Prefer SFTP over FTPS for simplicity and security.
+- Configure VPNs to avoid DNS/IP leaks and comply with local regulations.
 
 ## Conclusion
 
-- Networking Secure Protocols completa la serie de fundamentos de redes.
-  Aprendimos cómo TLS, SSH y VPN garantizan confidencialidad, integridad y autenticidad.
-- Estos protocolos son la base de la seguridad moderna en Internet.
-- Con ellos, pasamos de redes funcionales pero inseguras a comunicaciones confiables y protegidas.
+- Networking Secure Protocols completes the networking fundamentals series.
+- We learned how TLS, SSH, and VPN ensure confidentiality, integrity, and authenticity.
+- These protocols form the foundation of modern Internet security.
 
 
